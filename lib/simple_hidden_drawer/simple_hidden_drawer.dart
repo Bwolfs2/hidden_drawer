@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/controllers/hidden_drawer_controller.dart';
-import 'package:hidden_drawer_menu/simple_hidden_drawer/animated_drawer_content.dart';
-import 'package:hidden_drawer_menu/simple_hidden_drawer/bloc/simple_hidden_drawer_bloc.dart';
 import 'package:hidden_drawer_menu/simple_hidden_drawer/provider/simple_hidden_drawer_provider.dart';
+
+import 'animated_drawer_content.dart';
+import 'bloc/simple_hidden_drawer_bloc.dart';
 
 class SimpleHiddenDrawer extends StatefulWidget {
   /// position initial item selected in menu( start in 0)

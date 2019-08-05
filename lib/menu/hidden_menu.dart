@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hidden_drawer_menu/menu/item_hidden_menu.dart';
-import 'package:hidden_drawer_menu/menu/item_hidden_menu_right.dart';
 import 'package:hidden_drawer_menu/simple_hidden_drawer/animated_drawer_content.dart';
 import 'package:hidden_drawer_menu/simple_hidden_drawer/provider/simple_hidden_drawer_provider.dart';
+
+import 'item_hidden_menu.dart';
+import 'item_hidden_menu_right.dart';
 
 class HiddenMenu extends StatefulWidget {
   /// Decocator that allows us to add backgroud in the menu(img)

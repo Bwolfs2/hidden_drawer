@@ -1,4 +1,4 @@
-[![pub package](https://img.shields.io/pub/v/hidden_drawer_menu.svg)](https://pub.dartlang.org/packages/hidden_drawer_menu)
+[![pub package](https://img.shields.io/pub/v/hidden_drawer.svg)](https://pub.dartlang.org/packages/hidden_drawer)
 
 # Hidden Drawer Menu
 
@@ -6,17 +6,17 @@ Hidden Drawer Menu is a library for adding a beautiful drawer mode menu feature 
 
 You can use a pre-defined menu or make a fully customized menu.
 
-![Usage of the hidden_drawer_menu widget on an android device](https://github.com/RafaelBarbosatec/hidden_drawer_menu/blob/master/imgs/example.gif)
+![Usage of the hidden_drawer widget on an android device](https://github.com/RafaelBarbosatec/hidden_drawer/blob/master/imgs/example.gif)
 
 
-[Download APK Example](https://github.com/RafaelBarbosatec/hidden_drawer_menu/blob/master/apk/hidden_drawer.apk)
+[Download APK Example](https://github.com/RafaelBarbosatec/hidden_drawer/blob/master/apk/hidden_drawer.apk)
 
 
 # Use with default menu
 
 ```Dart
 
-import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
+import 'package:hidden_drawer/hidden_drawer/hidden_drawer.dart';
 
 void main() => runApp(MyApp());
 
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ```Dart
 
-import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
+import 'package:hidden_drawer/hidden_drawer/hidden_drawer.dart';
 
 void main() => runApp(MyApp());
 
@@ -210,7 +210,7 @@ SimpleHiddenDrawerProvider.of(context).getMenuStateListener().listen((state){
 
 ## If you want to use only the widget responsible for the animation, it is now available as AnimatedDrawerContent
 
-![Example usage AnimatedDrawerContent](https://github.com/RafaelBarbosatec/hidden_drawer_menu/blob/develop/imgs/exampleAnimated.gif)
+![Example usage AnimatedDrawerContent](https://github.com/RafaelBarbosatec/hidden_drawer/blob/develop/imgs/exampleAnimated.gif)
 
 ```Dart
 HiddenDrawerController controller = HiddenDrawerController(vsync: this);

@@ -1,8 +1,8 @@
-name: hidden_drawer_menu
-description: Hidden Drawer Menu is a library for adding a beautiful drawer mode menu feature with perspective animation
-version: 1.1.1
-author: RafaelBarbosatec<rafaelbarbosatec@gmail.com>
-homepage: https://github.com/RafaelBarbosatec/hidden_drawer_menu
+name: hidden_drawer
+description: Hidden Drawer start like a fork of https://github.com/RafaelBarbosatec/hidden_drawer_menu and https://www.youtube.com/watch?v=6CEjnCVdgRM with custom changes to work in my projects
+version: 0.0.1
+author: Bwolf<bwolf@flutterando.com>
+homepage: https://github.com/bwolfs2/hidden_drawer
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"

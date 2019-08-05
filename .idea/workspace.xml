@@ -74,14 +74,14 @@
       <list>
         <option value="$PROJECT_DIR$/lib/ScreenHiddenDrawer.dart" />
         <option value="$PROJECT_DIR$/lib/HiddenDrawerMenu.dart" />
-        <option value="$PROJECT_DIR$/test/hidden_drawer_menu_test.dart" />
+        <option value="$PROJECT_DIR$/test/hidden_drawer_test.dart" />
         <option value="$PROJECT_DIR$/example/test/widget_test.dart" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/lib/screen_hidden_drawer.dart" />
-        <option value="$PROJECT_DIR$/lib/hidden_drawer_menu.dart" />
+        <option value="$PROJECT_DIR$/lib/hidden_drawer.dart" />
         <option value="$PROJECT_DIR$/lib/impl/hidden_drawer_impl.dart" />
         <option value="$PROJECT_DIR$/lib/providers/BlocProvider.dart" />
-        <option value="$PROJECT_DIR$/lib/hidden_drawer/hidden_drawer_menu_2.dart" />
+        <option value="$PROJECT_DIR$/lib/hidden_drawer/hidden_drawer_2.dart" />
         <option value="$PROJECT_DIR$/lib/providers/bloc_provider.dart" />
         <option value="$PROJECT_DIR$/lib/builder/hidden_drawer_builder.dart" />
         <option value="$PROJECT_DIR$/lib/hidden_drawer/hidden_drawer_impl.dart" />
@@ -109,7 +109,7 @@
         <option value="$PROJECT_DIR$/lib/menu/item_hidden_menu.dart" />
         <option value="$PROJECT_DIR$/lib/menu/hidden_menu.dart" />
         <option value="$PROJECT_DIR$/lib/hidden_drawer/screen_hidden_drawer.dart" />
-        <option value="$PROJECT_DIR$/lib/hidden_drawer/hidden_drawer_menu.dart" />
+        <option value="$PROJECT_DIR$/lib/hidden_drawer/hidden_drawer.dart" />
         <option value="$PROJECT_DIR$/lib/controllers/hidden_drawer_controller.dart" />
         <option value="$PROJECT_DIR$/example/README.md" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -133,12 +133,12 @@
         <subPane>
           <expand>
             <path>
-              <item name="hidden_drawer_menu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hidden_drawer_menu" type="462c0819:PsiDirectoryNode" />
+              <item name="hidden_drawer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hidden_drawer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="hidden_drawer_menu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hidden_drawer_menu" type="462c0819:PsiDirectoryNode" />
+              <item name="hidden_drawer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hidden_drawer" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -262,7 +262,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/screen_hidden_drawer.dart" />
     <entry file="file://$PROJECT_DIR$/lib/impl/hidden_drawer_impl.dart" />
-    <entry file="file://$PROJECT_DIR$/lib/hidden_drawer_menu.dart" />
+    <entry file="file://$PROJECT_DIR$/lib/hidden_drawer.dart" />
     <entry file="file://$PROJECT_DIR$/lib/menu/hidden_menu_bloc.dart" />
     <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/container.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -510,7 +510,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hidden_drawer/hidden_drawer_menu.dart">
+    <entry file="file://$PROJECT_DIR$/lib/hidden_drawer/hidden_drawer.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />

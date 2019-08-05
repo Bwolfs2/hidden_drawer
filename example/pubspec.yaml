@@ -1,4 +1,4 @@
-name: hidden_drawer_menu_demo
+name: hidden_drawer_demo
 description: A new Flutter application.
 
 # The following defines the version and build number for your application.
@@ -16,7 +16,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  hidden_drawer_menu:
+  hidden_drawer:
       path: ".."
 
 dev_dependencies:

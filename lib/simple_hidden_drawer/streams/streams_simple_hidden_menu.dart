@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/widgets.dart';
-import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
+import 'package:hidden_drawer_menu/controllers/hidden_drawer_controller.dart';
 
 class StreamsSimpleHiddenMenu {
   /// stream used to control item selected

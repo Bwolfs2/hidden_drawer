@@ -1,13 +1,4 @@
-library hidden_drawer_menu;
-
-export 'package:hidden_drawer_menu/hidden_drawer/screen_hidden_drawer.dart';
-export 'package:hidden_drawer_menu/menu/hidden_menu.dart';
-export 'package:hidden_drawer_menu/menu/item_hidden_menu.dart';
-export 'package:hidden_drawer_menu/controllers/hidden_drawer_controller.dart';
-export 'package:hidden_drawer_menu/simple_hidden_drawer/bloc/simple_hidden_drawer_bloc.dart';
-export 'package:hidden_drawer_menu/simple_hidden_drawer/animated_drawer_content.dart';
-export 'package:hidden_drawer_menu/simple_hidden_drawer/simple_hidden_drawer.dart';
-export 'package:hidden_drawer_menu/simple_hidden_drawer/provider/simple_hidden_drawer_provider.dart';
+library hidden_drawer;
 
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer/screen_hidden_drawer.dart';
@@ -16,6 +7,7 @@ import 'package:hidden_drawer_menu/menu/item_hidden_menu.dart';
 import 'package:hidden_drawer_menu/simple_hidden_drawer/animated_drawer_content.dart';
 import 'package:hidden_drawer_menu/simple_hidden_drawer/bloc/simple_hidden_drawer_bloc.dart';
 import 'package:hidden_drawer_menu/simple_hidden_drawer/simple_hidden_drawer.dart';
+
 
 class HiddenDrawerMenu extends StatelessWidget {
   /// List item menu and respective screens

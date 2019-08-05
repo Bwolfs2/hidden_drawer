@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hidden_drawer_menu_demo/exampleCustomMenu/ExampleCustomMenu.dart';
-import 'package:hidden_drawer_menu_demo/exampleHiddenDrawer/example_hidden_drawer.dart';
+
+import 'exampleCustomMenu/ExampleCustomMenu.dart';
+import 'exampleHiddenDrawer/example_hidden_drawer.dart';
 
 void main() => runApp(MyApp());
 

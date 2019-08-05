@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
-import 'package:hidden_drawer_menu_demo/screen1.dart';
-import 'package:hidden_drawer_menu_demo/screen2.dart';
+import 'package:hidden_drawer_menu/controllers/hidden_drawer_controller.dart';
+import 'package:hidden_drawer_menu/simple_hidden_drawer/provider/simple_hidden_drawer_provider.dart';
+import 'package:hidden_drawer_menu/simple_hidden_drawer/simple_hidden_drawer.dart';
+
+import '../screen1.dart';
+import '../screen2.dart';
 
 class ExampleCustomMenu extends StatelessWidget {
   @override
