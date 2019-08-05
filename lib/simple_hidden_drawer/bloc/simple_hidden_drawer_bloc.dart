@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/widgets.dart';
-import 'package:hidden_drawer_menu/controllers/hidden_drawer_controller.dart';
-import 'package:hidden_drawer_menu/simple_hidden_drawer/streams/streams_simple_hidden_menu.dart';
+import 'package:hidden_drawer/controllers/hidden_drawer_controller.dart';
+import 'package:hidden_drawer/simple_hidden_drawer/streams/streams_simple_hidden_menu.dart';
 
 class SimpleHiddenDrawerBloc {
   /// builder containing the drawer settings

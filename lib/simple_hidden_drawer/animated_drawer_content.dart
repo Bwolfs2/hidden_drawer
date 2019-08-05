@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hidden_drawer_menu/controllers/hidden_drawer_controller.dart';
+import 'package:hidden_drawer/controllers/hidden_drawer_controller.dart';
 
 enum TypeOpen { FROM_LEFT, FROM_RIGHT }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hidden_drawer_menu/simple_hidden_drawer/bloc/simple_hidden_drawer_bloc.dart';
+import 'package:hidden_drawer/simple_hidden_drawer/bloc/simple_hidden_drawer_bloc.dart';
 
 class SimpleHiddenDrawerProvider extends InheritedWidget {
   final SimpleHiddenDrawerBloc hiddenDrawerBloc;
