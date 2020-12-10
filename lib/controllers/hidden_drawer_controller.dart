@@ -9,16 +9,16 @@ enum MenuState {
 
 class HiddenDrawerController extends ChangeNotifier {
   /// provider used to animation
-  final TickerProvider vsync;
+  final TickerProvider? vsync;
 
   /// animationController used to animation of the drawer
-  final AnimationController _animationController;
+  final AnimationController? _animationController;
 
-  final Curve animationCurve;
+  final Curve? animationCurve;
 
-  Curve _animationCurve;
+  Curve? _animationCurve;
 
-  double value = 0.0;
+  double? value = 0.0;
 
   double _percent = 0.0;
 
@@ -26,12 +26,12 @@ class HiddenDrawerController extends ChangeNotifier {
   MenuState state = MenuState.closed;
 
   HiddenDrawerController({this.vsync, this.animationCurve = Curves.decelerate})
-      : _animationController = new AnimationController(vsync: vsync) {
-    _animationCurve = new Interval(0.0, 1.0, curve: animationCurve);
+      : _animationController = AnimationController(vsync: vsync!) {
+    _animationCurve = new Interval(0.0, 1.0, curve: animationCurve!);
     _animationController
-      ..duration = const Duration(milliseconds: 350)
+      ?..duration = const Duration(milliseconds: 350)
       ..addListener(() {
-        value = _animationCurve.transform(_animationController.value);
+        value = _animationCurve?.transform(_animationController?.value ?? 0);
         notifyListeners();
       })
       ..addStatusListener((AnimationStatus status) {
@@ -57,28 +57,28 @@ class HiddenDrawerController extends ChangeNotifier {
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController?.dispose();
     super.dispose();
   }
 
   /// channel to access percent of the animation
   get percentOpen {
-    return _animationController.value;
+    return _animationController?.value;
   }
 
   ///method to open drawer
   open([double percent = 0.0]) {
-    _animationController.forward(from: percent);
+    _animationController?.forward(from: percent);
   }
 
   ///method to close drawer
   close([double percent = 1.0]) {
-    _animationController.reverse(from: percent);
+    _animationController?.reverse(from: percent);
   }
 
   move(double percent) {
     _percent = percent;
-    value = _animationCurve.transform(percent);
+    value = _animationCurve?.transform(percent);
     notifyListeners();
   }
 

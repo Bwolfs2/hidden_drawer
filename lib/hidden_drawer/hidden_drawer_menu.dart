@@ -13,7 +13,7 @@ class HiddenDrawerMenu extends StatelessWidget {
   final List<ScreenHiddenDrawer> screens;
 
   /// position initial item selected in menu( sart in 0)
-  final int initPositionSelected;
+  final int? initPositionSelected;
 
   /// Decocator that allows us to add backgroud in the content(color)
   final Color backgroundColorContent;
@@ -23,10 +23,10 @@ class HiddenDrawerMenu extends StatelessWidget {
   final bool whithAutoTittleName;
 
   /// Style of the title in appbar
-  final TextStyle styleAutoTittleName;
+  final TextStyle? styleAutoTittleName;
 
   /// change backgroundColor of the AppBar
-  final Color backgroundColorAppBar;
+  final Color? backgroundColorAppBar;
 
   ///Change elevation of the AppBar
   final double elevationAppBar;
@@ -35,20 +35,20 @@ class HiddenDrawerMenu extends StatelessWidget {
   final Widget iconMenuAppBar;
 
   /// Add actions in the AppBar
-  final List<Widget> actionsAppBar;
+  final List<Widget>? actionsAppBar;
 
   /// Set custom widget in tittleAppBar
-  final Widget tittleAppBar;
+  final Widget? tittleAppBar;
 
   /// Decide whether title is centered or not
-  final bool isTitleCentered;
+  final bool? isTitleCentered;
 
   //Menu
   /// Decocator that allows us to add backgroud in the menu(img)
-  final DecorationImage backgroundMenu;
+  final DecorationImage? backgroundMenu;
 
   /// that allows us to add backgroud in the menu(color)
-  final Color backgroundColorMenu;
+  final Color? backgroundColorMenu;
 
   /// that allows us to add shadow above menu items
   final bool enableShadowItensMenu;
@@ -74,10 +74,10 @@ class HiddenDrawerMenu extends StatelessWidget {
 
   final TypeOpen typeOpen;
 
-  final Widget title;
+  final Widget? title;
 
-  HiddenDrawerMenu({
-    this.screens,
+  HiddenDrawerMenu(
+    this.screens, {
     this.initPositionSelected = 0,
     this.backgroundColorAppBar,
     this.elevationAppBar = 4.0,
@@ -117,10 +117,9 @@ class HiddenDrawerMenu extends StatelessWidget {
       initPositionSelected: initPositionSelected,
       title: title,
       screenSelectedBuilder: (position, bloc) {
-        List<Widget> actions = List();
+        List<Widget> actions = [];
 
-        if (typeOpen == TypeOpen.FROM_RIGHT) 
-        {
+        if (typeOpen == TypeOpen.FROM_RIGHT) {
           actions.add(
             IconButton(
               icon: iconMenuAppBar,
@@ -132,17 +131,17 @@ class HiddenDrawerMenu extends StatelessWidget {
         }
 
         if (actionsAppBar != null) {
-          actions.addAll(actionsAppBar);
+          actions.addAll(actionsAppBar!);
         }
 
         return Scaffold(
           backgroundColor: backgroundColorContent,
-          appBar: screens[position].itemMenu.hideAppBar
+          appBar: (screens[position].itemMenu?.hideAppBar ?? true)
               ? null
               : AppBar(
                   backgroundColor:
-                      screens[position].itemMenu.appBarColor != null
-                          ? screens[position].itemMenu.appBarColor
+                      screens[position].itemMenu?.appBarColor != null
+                          ? screens[position].itemMenu?.appBarColor
                           : backgroundColorAppBar,
                   elevation: elevationAppBar,
                   title: getTittleAppBar(position),
@@ -160,7 +159,7 @@ class HiddenDrawerMenu extends StatelessWidget {
     if (tittleAppBar == null) {
       return whithAutoTittleName
           ? Text(
-              screens[position].itemMenu.name,
+              screens[position].itemMenu?.name ?? '',
               style: styleAutoTittleName,
             )
           : Container();
@@ -170,7 +169,7 @@ class HiddenDrawerMenu extends StatelessWidget {
   }
 
   buildMenu() {
-    List<ItemHiddenMenu> _itensMenu = new List();
+    List<ItemHiddenMenu?> _itensMenu = [];
 
     screens.forEach((item) {
       _itensMenu.add(item.itemMenu);
@@ -187,7 +186,7 @@ class HiddenDrawerMenu extends StatelessWidget {
     );
   }
 
-  Widget _buildLeading(SimpleHiddenDrawerBloc bloc) {
+  Widget? _buildLeading(SimpleHiddenDrawerBloc bloc) {
     if (typeOpen == TypeOpen.FROM_LEFT) {
       return IconButton(
           icon: iconMenuAppBar,

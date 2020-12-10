@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 class ItemHiddenMenuRight extends StatelessWidget {
   /// name of the menu item
-  final String name;
+  final String? name;
 
   /// callback to recibe action click in item
-  final Function onTap;
+  final Function? onTap;
 
   final Color colorLineSelected;
 
   /// Base style of the text-item.
-  final TextStyle baseStyle;
+  final TextStyle? baseStyle;
 
   /// style to apply to text when item is selected
-  final TextStyle selectedStyle;
+  final TextStyle? selectedStyle;
 
   final bool selected;
 
   ItemHiddenMenuRight({
-    Key key,
+    Key? key,
     this.name,
     this.selected = false,
     this.onTap,
@@ -33,14 +33,14 @@ class ItemHiddenMenuRight extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.only(bottom: 15.0),
       child: InkWell(
-        onTap: onTap,
+        onTap: () => onTap?.call(),
         child: Row(
           children: <Widget>[
             Expanded(
               child: Container(
                   margin: EdgeInsets.only(right: 20.0),
                   child: Text(
-                    name,
+                    name ?? '',
                     style: (this.baseStyle ??
                             TextStyle(color: Colors.grey, fontSize: 25.0))
                         .merge(this.selected

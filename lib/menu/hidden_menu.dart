@@ -7,29 +7,29 @@ import 'item_hidden_menu_right.dart';
 
 class HiddenMenu extends StatefulWidget {
   /// Decocator that allows us to add backgroud in the menu(img)
-  final DecorationImage background;
+  final DecorationImage? background;
 
   /// that allows us to add shadow above menu items
   final bool enableShadowItensMenu;
 
   /// that allows us to add backgroud in the menu(color)
-  final Color backgroundColorMenu;
+  final Color? backgroundColorMenu;
 
   /// Items of the menu
-  final List<ItemHiddenMenu> itens;
+  final List<ItemHiddenMenu?>? itens;
 
   /// Callback to recive item selected for user
-  final Function(int) selectedListern;
+  final Function(int)? selectedListern;
 
   /// position to set initial item selected in menu
-  final int initPositionSelected;
+  final int? initPositionSelected;
 
   final TypeOpen typeOpen;
 
-  final Widget title;
+  final Widget? title;
 
   HiddenMenu(
-      {Key key,
+      {Key? key,
       this.background,
       this.itens,
       this.selectedListern,
@@ -45,7 +45,7 @@ class HiddenMenu extends StatefulWidget {
 }
 
 class _HiddenMenuState extends State<HiddenMenu> {
-  int _indexSelected;
+  int? _indexSelected;
   bool isconfiguredListern = false;
 
   @override
@@ -94,38 +94,41 @@ class _HiddenMenuState extends State<HiddenMenu> {
                 child: NotificationListener<OverscrollIndicatorNotification>(
                   onNotification: (scroll) {
                     scroll.disallowGlow();
+                    return true;
                   },
                   child: ListView.builder(
                       shrinkWrap: true,
                       padding: EdgeInsets.all(0.0),
-                      itemCount: widget.itens.length,
+                      itemCount: widget.itens?.length,
                       itemBuilder: (context, index) {
                         if (widget.typeOpen == TypeOpen.FROM_LEFT) {
                           return ItemHiddenMenu(
-                            menuIcon: widget.itens[index].menuIcon,
-                            name: widget.itens[index].name,
+                            menuIcon: widget.itens?[index]?.menuIcon,
+                            name: widget.itens?[index]?.name,
                             selected: index == _indexSelected,
                             colorLineSelected:
-                                widget.itens[index].colorLineSelected,
-                            baseStyle: widget.itens[index].baseStyle,
-                            selectedStyle: widget.itens[index].selectedStyle,
+                                widget.itens?[index]?.colorLineSelected ??
+                                    Colors.blue,
+                            baseStyle: widget.itens?[index]?.baseStyle,
+                            selectedStyle: widget.itens?[index]?.selectedStyle,
                             onTap: () {
                               SimpleHiddenDrawerProvider.of(context)
-                                  .setSelectedMenuPosition(index);
+                                  ?.setSelectedMenuPosition(index);
                             },
-                            icon: widget.itens[index].icon,
+                            icon: widget.itens?[index]?.icon,
                           );
                         } else {
                           return ItemHiddenMenuRight(
-                            name: widget.itens[index].name,
+                            name: widget.itens?[index]?.name,
                             selected: index == _indexSelected,
                             colorLineSelected:
-                                widget.itens[index].colorLineSelected,
-                            baseStyle: widget.itens[index].baseStyle,
-                            selectedStyle: widget.itens[index].selectedStyle,
+                                widget.itens?[index]?.colorLineSelected ??
+                                    Colors.blue,
+                            baseStyle: widget.itens?[index]?.baseStyle,
+                            selectedStyle: widget.itens?[index]?.selectedStyle,
                             onTap: () {
                               SimpleHiddenDrawerProvider.of(context)
-                                  .setSelectedMenuPosition(index);
+                                  ?.setSelectedMenuPosition(index);
                             },
                           );
                         }
@@ -142,8 +145,8 @@ class _HiddenMenuState extends State<HiddenMenu> {
 
   void confListern() {
     SimpleHiddenDrawerProvider.of(context)
-        .getPositionSelectedListener()
-        .listen((position) {
+        ?.getPositionSelectedListener()
+        ?.listen((position) {
       setState(() {
         _indexSelected = position;
       });

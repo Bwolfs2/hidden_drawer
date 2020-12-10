@@ -4,8 +4,8 @@ import 'package:hidden_drawer/controllers/hidden_drawer_controller.dart';
 enum TypeOpen { FROM_LEFT, FROM_RIGHT }
 
 class AnimatedDrawerContent extends StatefulWidget {
-  final HiddenDrawerController controller;
-  final Widget child;
+  final HiddenDrawerController? controller;
+  final Widget? child;
   final bool isDraggable;
   final double slidePercent;
   final double verticalScalePercent;
@@ -17,13 +17,13 @@ class AnimatedDrawerContent extends StatefulWidget {
   final TypeOpen typeOpen;
 
   const AnimatedDrawerContent(
-      {Key key,
+      {Key? key,
       this.controller,
       this.child,
       this.isDraggable = true,
-      this.slidePercent,
-      this.verticalScalePercent,
-      this.contentCornerRadius,
+      this.slidePercent = 1,
+      this.verticalScalePercent = 1,
+      this.contentCornerRadius = 1,
       this.whithPaddingTop = false,
       this.whithShadow = true,
       this.enableScaleAnimin = true,
@@ -40,7 +40,7 @@ class _AnimatedDrawerContentState extends State<AnimatedDrawerContent> {
   static const double WIDTH_GESTURE = 30.0;
   static const double HEIGHT_APPBAR = 80.0;
   static const double BLUR_SHADOW = 20.0;
-  RenderBox _box;
+  RenderBox? _box;
   double width = 0;
   double height = 0;
   double slideAmount = 0.0;
@@ -49,17 +49,17 @@ class _AnimatedDrawerContentState extends State<AnimatedDrawerContent> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback(_afterLayout);
+    WidgetsBinding.instance?.addPostFrameCallback(_afterLayout);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: widget.controller,
+      animation: widget.controller!,
       builder: (_, child) {
-        var animatePercent = widget.controller.value;
-        slideAmount = ((width) / 100 * widget.slidePercent) * animatePercent;
+        var animatePercent = widget.controller?.value ?? 1;
+        slideAmount = ((width) / 100 * (widget.slidePercent)) * animatePercent;
 
         if (widget.enableScaleAnimin)
           contentScale = 1.0 -
@@ -95,14 +95,14 @@ class _AnimatedDrawerContentState extends State<AnimatedDrawerContent> {
   _buildContet() {
     return Stack(
       children: <Widget>[
-        widget.child,
+        widget.child!,
         Container(
           margin: EdgeInsets.only(
               top: (widget.whithPaddingTop ? HEIGHT_APPBAR : 0)),
           child: GestureDetector(
             onHorizontalDragUpdate: (detail) {
               if (widget.isDraggable) {
-                var left = _box.globalToLocal(Offset(0.0, 0.0)).dx;
+                var left = _box?.globalToLocal(Offset(0.0, 0.0)).dx ?? 1;
                 var globalPosition = detail.globalPosition.dx + left;
                 if (globalPosition < 0) {
                   globalPosition = 0;
@@ -112,11 +112,11 @@ class _AnimatedDrawerContentState extends State<AnimatedDrawerContent> {
                 var realPosition = widget.typeOpen == TypeOpen.FROM_LEFT
                     ? position
                     : (1 - position);
-                widget.controller.move(realPosition);
+                widget.controller?.move(realPosition);
               }
             },
             onHorizontalDragEnd: (detail) {
-              widget.controller.openOrClose();
+              widget.controller?.openOrClose();
             },
             child: Align(
               alignment: widget.typeOpen == TypeOpen.FROM_LEFT
@@ -151,9 +151,9 @@ class _AnimatedDrawerContentState extends State<AnimatedDrawerContent> {
 
   void _afterLayout(Duration timeStamp) {
     setState(() {
-      _box = context.findRenderObject();
-      width = _box.size.width;
-      height = _box.size.height;
+      _box = context.findRenderObject() as RenderBox;
+      width = _box?.size.width ?? 0;
+      height = _box?.size.height ?? 0;
     });
   }
 }

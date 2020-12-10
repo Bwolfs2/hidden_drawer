@@ -23,7 +23,7 @@ class StreamsSimpleHiddenMenu {
   /// stream used to control animation
   StreamController<MenuState> _menuStateController = StreamController();
   Function(MenuState) get setMenuState => _menuStateController.sink.add;
-  Stream get getMenuState => _menuStateController.stream;
+  Stream<MenuState>? get getMenuState => _menuStateController.stream;
 
   dispose() {
     _screenSelectedController.close();
